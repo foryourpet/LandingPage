@@ -13,6 +13,7 @@ const Header = styled.div`
 `
 const Logo = styled.img`
     width: 140px;
+    cursor: pointer;
 `
 const JoinBtn = styled(Button)`
     float: right;
@@ -34,7 +35,7 @@ class HaederComponent extends Component {
     render() {
         return (
             <Header>
-                <Logo src={logo}/>
+                <Logo src={logo} onClick={() => window.location.href='#main'}/>
                 <JoinBtn size="default" ghost onClick={this.Joinus}>Join Us</JoinBtn>
             </Header>
         );
