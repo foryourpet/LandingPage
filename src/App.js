@@ -7,6 +7,13 @@ import './App.css';
 import HaederComponent from './components/header'
 import IndicatorComponent from './components/indicator'
 import SocialComponent from './components/social'
+
+// pages
+import MainPage from './pages/Main'
+import AboutPage from './pages/About'
+import ContactPage from './pages/Contact'
+
+
 class App extends Component {
   constructor(){
     super()
@@ -14,14 +21,15 @@ class App extends Component {
     this.state = {
       licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
       anchors: ["main", "about", "contact"],
-      sectionsColor: ["#FFF", "#ff5f45", "#0798ec"],
+      sectionsColor: ["#FFF", "#FFF", "#FFF"],
       callbacks: ["onLeave"],
       dragAndMove: "fingersonly",
       fadingEffect: true,
       slidesNavigation: true,
       slidesNavPosition: 'right',
       onLeave :this.onLeave ,
-      index: 1
+      index: 1,
+      before: null
     }  
   }
   onLeave (origin, destination, direction){
@@ -37,7 +45,8 @@ class App extends Component {
       indexNum = 3
     }
     this.setState({
-      index : indexNum
+      index : indexNum,
+      before: origin.anchor
     })
   }
   render() {
@@ -53,16 +62,13 @@ class App extends Component {
             return (
               <ReactFullpage.Wrapper>
                 <div className="section">
-                  <p>Section 1 (welcome to fullpage.js)</p>
-                  <button onClick={() => fullpageApi.moveSectionDown()}>
-                    Click me to move down
-                  </button>
+                  <MainPage _fullpageApi={fullpageApi}/>
                 </div>
                 <div className="section">
-                  <p>Section 2</p>
+                  <AboutPage _index={this.state.index} _before={this.state.before}/>
                 </div>
                 <div className="section">
-                  <p>Section 2</p>
+                  <ContactPage _index={this.state.index} _before={this.state.before}/>
                 </div>
               </ReactFullpage.Wrapper>
             );

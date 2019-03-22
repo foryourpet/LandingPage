@@ -7,7 +7,7 @@ const indicateWidth = keyframes`
     background: #DDD;
   }
   100% {
-    width: 35px;
+    width: 28px;
     background: #6648b5;
   }
 `
@@ -22,11 +22,14 @@ const IndicatorWrapper = styled.ol`
     margin: 0px;
     display: block;
     top: 45%;
+    @media (max-width: 768px) {
+      display:none;
+    }
 `
 const Indicator = styled.li`
     opacity: 1 !important;
     width: 18px;
-    height: 3px;
+    height: 2px;
     margin: 10px;
     background: #DDD;
     animation-iteration-count: 1;

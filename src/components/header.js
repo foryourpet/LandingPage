@@ -28,14 +28,17 @@ const JoinBtn = styled(Button)`
 
 
 class HaederComponent extends Component {
-  render() {
-    return (
-        <Header>
-            <Logo src={logo}/>
-            <JoinBtn size="default" ghost>Join Us</JoinBtn>
-        </Header>
-    );
-  }
+    Joinus(){
+        window.location.href="https://goo.gl/forms/HU9PV9QY8zHYX7rh2"
+    }
+    render() {
+        return (
+            <Header>
+                <Logo src={logo}/>
+                <JoinBtn size="default" ghost onClick={this.Joinus}>Join Us</JoinBtn>
+            </Header>
+        );
+    }
 }
 
 export default HaederComponent;
