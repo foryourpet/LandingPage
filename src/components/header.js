@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import logo from '../images/logo.png';
 import { Button } from 'antd';
 
@@ -17,16 +17,25 @@ const Logo = styled.img`
 `
 const JoinBtn = styled(Button)`
     float: right;
-    color: #6648b5 !important;
-    border-color: #6648b5 !important;
     border-radius: 50px !important;
     font-weight: bold !important;
-    :hover {
-        background: #6648b5 !important;
+    ${props => (props.index===1 || props.index===3 || props.index===5) && css`
+        color: #6648b5 !important;
+        border-color: #6648b5 !important;
+        :hover {
+            background: #6648b5 !important;
+            color: #FFF !important;
+        }
+    `}
+    ${props => (props.index===2 || props.index===4) && css`
         color: #FFF !important;
-    }
+        border-color: #FFF !important;
+        :hover {
+            background: #FFF !important;
+            color: #555 !important;
+        }
+    `}
 `
-
 
 class HaederComponent extends Component {
     Joinus(){
@@ -36,7 +45,7 @@ class HaederComponent extends Component {
         return (
             <Header>
                 <Logo src={logo} onClick={() => window.location.href='#main'}/>
-                <JoinBtn size="default" ghost onClick={this.Joinus}>Join Us</JoinBtn>
+                <JoinBtn size="default" ghost onClick={this.Joinus} index={this.props._index}>사전 회원가입</JoinBtn>
             </Header>
         );
     }

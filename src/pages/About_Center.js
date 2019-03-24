@@ -71,16 +71,16 @@ const Image = styled.img`
     width:50vh;
     opacity:0;
     ${props => props.fromTop && css`
-        animation: ${fromTop} 1.2s ease-out forwards;
+        animation: ${fromTop} 1s ease-out forwards;
     `}
     ${props => props.fromBottom && css`
-        animation: ${fromBottom} 1.2s ease-out forwards;
+        animation: ${fromBottom} 1s ease-out forwards;
     `}
     ${props => props.toTop && css`
-        animation: ${toTop} 1.2s ease-out forwards;
+        animation: ${toTop} 1s ease-out forwards;
     `}
     ${props => props.toBottom && css`
-        animation: ${toBottom} 1.2s ease-out forwards;
+        animation: ${toBottom} 1s ease-out forwards;
     `}
 `
 
@@ -102,7 +102,7 @@ const Content = styled.p`
     font-size: 16px;
     color: rgb(50, 50, 50);
 `
-class AboutPage extends Component {
+class AboutCenterPage extends Component {
     render() {
         const { _index, _before } = this.props
         return (
@@ -120,7 +120,7 @@ class AboutPage extends Component {
                 <ImageWrapper>
                     <Image 
                     fromTop={_index===2 && _before==="main" ? true : false}
-                    fromBottom={_index===2 && _before==="contact" ? true : false} 
+                    fromBottom={_index===2 && _before==="about-customer" ? true : false} 
                     toTop={_index===1 ? true : false}
                     toBottom={_index===3 ? true : false} src={about}/>
                 </ImageWrapper>
@@ -130,4 +130,4 @@ class AboutPage extends Component {
     }
 }
 
-export default AboutPage;
+export default AboutCenterPage;

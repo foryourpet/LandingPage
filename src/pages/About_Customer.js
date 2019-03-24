@@ -8,26 +8,6 @@ import { fadeInUp, fadeOutDown } from 'react-animations'
 const fromTop = keyframes`${fadeInUp}`;
 const toTop = keyframes`${fadeOutDown}`;
 
-// const fromTop = keyframes`
-//   0% {
-//     opacity:0
-//     transform: rotate(20deg);
-//   }
-//   100% {
-//     opacity:1
-//     transform: rotate(0deg);
-//   }
-// `
-// const toTop = keyframes`
-//   0% {
-//     opacity:1
-//     transform: rotate(0deg);
-//   }
-//   100% {
-//     opacity:0
-//     transform: rotate(20deg);
-//   }
-// `
 const ColLeft = styled(Col)`
   height: 100vh;
   background: rgb(245, 245, 245);
@@ -60,7 +40,25 @@ const Image = styled.img`
       animation: ${toTop} 1s ease-out forwards;
   `}
 `
-class ContactPage extends Component {
+const SubTitle = styled.p`
+    margin: 0px;
+    margin-top:10px;
+    color: rgb(150,150,150);
+`
+const Title = styled.p`
+    font-size: 30px;
+    margin-bottom: 5px;
+    color: rgb(50,50,50);
+    font-weight: 600;
+    b {
+        color: rgb(102, 72, 181);
+    }
+`
+const Content = styled.p`
+    font-size: 16px;
+    color: rgb(50, 50, 50);
+`
+class AboutCustomerPage extends Component {
   render() {
     const { _index, _before } = this.props
     return (
@@ -69,24 +67,16 @@ class ContactPage extends Component {
             <ImageWrapper>
               <Image 
                 fromTop={ _index===3 ? true : false}
-                toTop={_index===2 ? true : false} src={about}/>
+                toTop={_index!=3 ? true : false} src={about}/>
             </ImageWrapper>
           </ColLeft>
           <ColRight md={12} sm={24}>
             <AlignCenter>
-              <Form>
-                <Form.Item
-                  label="E-mail"
-                >
-                  <Input size="large" />
-                </Form.Item>
-              </Form>
-              {/* <form action="https://formspree.io/wkddnjset@naver.com" method="POST">
-                <input type="email" name="_replyto" value="wkddnjset@naver.com" hidden/>
-                <input type="text" name="title"/>
-                <input type="text" name="content"/>
-                <input type="submit" value="Send"/>
-              </form> */}
+              <Title>AboutPage 페이지 입니다.<b>포팻(ForYourPet)</b>에 대해 설명해주세요.</Title>
+              <SubTitle>반갑습니다^^ 포펫입니다.</SubTitle>
+              <Content>
+                  여기에는 내용을 적어주세요. 어떤 내용이 들어가면 좋을까요..
+              </Content>
             </AlignCenter>
           </ColRight>
         </Row>
@@ -94,4 +84,4 @@ class ContactPage extends Component {
   }
 }
 
-export default ContactPage;
+export default AboutCustomerPage;

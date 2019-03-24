@@ -10,18 +10,19 @@ import SocialComponent from './components/social'
 
 // pages
 import MainPage from './pages/Main'
-import AboutPage from './pages/About'
-import ContactPage from './pages/Contact'
-
+import AboutCenterPage from './pages/About_Center'
+import AboutCustomerPage from './pages/About_Customer'
+import AboutOtherPage from './pages/About_Other'
+import ComingSoonPage from './pages/ComingSoon'
 
 class App extends Component {
   constructor(){
     super()
-    this.onLeave  = this.onLeave .bind(this)
+    this.onLeave  = this.onLeave.bind(this)
     this.state = {
       licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-      anchors: ["main", "about", "contact"],
-      sectionsColor: ["#FFF", "#FFF", "#FFF"],
+      anchors: ["main", "about-center", "about-customer", "about-other", "coming-soon"],
+      sectionsColor: ["#FFF", "#FFF", "#FFF", "#FFF", "#FFF"],
       callbacks: ["onLeave"],
       dragAndMove: "fingersonly",
       fadingEffect: true,
@@ -38,11 +39,17 @@ class App extends Component {
     if(anchor==="main"){
       indexNum = 1
     }
-    else if(anchor==="about"){
+    else if(anchor==="about-center"){
       indexNum = 2
     }
-    else{
+    else if(anchor==="about-customer"){
       indexNum = 3
+    }
+    else if(anchor==="about-other"){
+      indexNum = 4
+    }
+    else{
+      indexNum = 5
     }
     this.setState({
       index : indexNum,
@@ -53,7 +60,7 @@ class App extends Component {
     const { ...fullpageOptions } = this.state
     return (
       <Layout>
-        <HaederComponent/>
+        <HaederComponent _index={this.state.index}/>
         <IndicatorComponent _index={this.state.index}/>
         <SocialComponent/>
         <ReactFullpage
@@ -65,10 +72,16 @@ class App extends Component {
                   <MainPage _fullpageApi={fullpageApi}/>
                 </div>
                 <div className="section">
-                  <AboutPage _index={this.state.index} _before={this.state.before}/>
+                  <AboutCenterPage _index={this.state.index} _before={this.state.before}/>
                 </div>
                 <div className="section">
-                  <ContactPage _index={this.state.index} _before={this.state.before}/>
+                  <AboutCustomerPage _index={this.state.index} _before={this.state.before}/>
+                </div>
+                <div className="section">
+                  <AboutOtherPage _index={this.state.index} _before={this.state.before}/>
+                </div>
+                <div className="section">
+                  <ComingSoonPage _index={this.state.index} _before={this.state.before}/>
                 </div>
               </ReactFullpage.Wrapper>
             );
