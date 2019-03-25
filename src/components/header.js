@@ -19,7 +19,7 @@ const JoinBtn = styled(Button)`
     float: right;
     border-radius: 50px !important;
     font-weight: bold !important;
-    ${props => (props.index===1 || props.index===3 || props.index===5) && css`
+    ${props => (props.index===1 || props.index===3) && css`
         color: #6648b5 !important;
         border-color: #6648b5 !important;
         :hover {
@@ -27,13 +27,16 @@ const JoinBtn = styled(Button)`
             color: #FFF !important;
         }
     `}
-    ${props => (props.index===2 || props.index===4) && css`
+    ${props => (props.index===2) && css`
         color: #FFF !important;
         border-color: #FFF !important;
         :hover {
             background: #FFF !important;
             color: #555 !important;
         }
+    `}
+    ${props => (props.index===4) && css`
+        display:none !important;
     `}
 `
 

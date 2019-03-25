@@ -48,7 +48,6 @@ class IndicatorComponent extends Component {
                 <Indicator active={_index===2 ? true : false}></Indicator>
                 <Indicator active={_index===3 ? true : false}></Indicator>
                 <Indicator active={_index===4 ? true : false}></Indicator>
-                <Indicator active={_index===5 ? true : false}></Indicator>
             </IndicatorWrapper>
         );
     }

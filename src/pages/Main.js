@@ -58,13 +58,13 @@ class MainPage extends Component {
     return (
         <AlignCenter full>
             <SubTitle first>
-                #반려인들 바글바글 #핑퐁 #수의사비밀보장 #시간단축 #거리단축 #동물병원자랑
+            #동물병원 #호텔링 #미용 #목욕
             </SubTitle>
             <Title>
-                여러분의 동물병원 마케팅은 <b>포펫</b>에게 맞겨주세요!
+                <b>핑퐁퐁퐁</b> 이 소리는 당신의 반려동물에게 필요한 찰떡궁합 서비스를 찾는 소리입니다.
             </Title>
             <SubTitle second>
-                반려인들 요청에 맞춰 예상 진료비와 병원소개를 해주세요^^
+                DO PINGPONG FOR YOUR PET
             </SubTitle>
             <BtnWrapper>
                 <ArrowBtn type="primary" shape="circle" icon="arrow-down" size="large" onClick={() => this.props._fullpageApi.moveSectionDown()}/>

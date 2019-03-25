@@ -78,9 +78,6 @@ class App extends Component {
                   <AboutCustomerPage _index={this.state.index} _before={this.state.before}/>
                 </div>
                 <div className="section">
-                  <AboutOtherPage _index={this.state.index} _before={this.state.before}/>
-                </div>
-                <div className="section">
                   <ComingSoonPage _index={this.state.index} _before={this.state.before}/>
                 </div>
               </ReactFullpage.Wrapper>

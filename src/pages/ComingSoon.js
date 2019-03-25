@@ -17,6 +17,7 @@ const ArrowMove = keyframes`
     }
 `
 const BtnWrapper = styled.div`
+    text-align:center;
     opacity:0
     animation: ${TextFade} 1s ease forwards;
     animation-delay: 1.8s;
@@ -30,6 +31,7 @@ const ArrowBtn = styled(Button)`
     
 `
 const SubTitle = styled.p`
+    text-align:center;
     opacity:0
     animation: ${TextFade} 1s ease forwards;
     color: rgb(150,150,150);
@@ -42,6 +44,7 @@ const SubTitle = styled.p`
     `}
 `
 const Title = styled.p`
+    text-align:center;
     opacity:0
     animation: ${TextFade} 1.4s ease forwards;
     animation-delay: .5s;
@@ -53,23 +56,35 @@ const Title = styled.p`
         color: rgb(102, 72, 181);
     }
 `
+const Wrapper = styled(AlignCenter)`
+    text-align: center !important;
+`
+const JoinBtn = styled(Button)`
+    border-radius: 50px !important;
+    font-weight: bold !important;
+    color: #6648b5 !important;
+    border-color: #6648b5 !important;
+    :hover {
+        background: #6648b5 !important;
+        color: #FFF !important;
+    }                     
+`
 class ComingSoonPage extends Component {
   render() {
     return (
-        <AlignCenter full>
+        <Wrapper>
             <SubTitle first>
-                #반려인들 바글바글 #핑퐁 #수의사비밀보장 #시간단축 #거리단축 #동물병원자랑
+                핑퐁포펫
             </SubTitle>
             <Title>
-                여러분의 동물병원 마케팅은 <b>포펫</b>에게 맞겨주세요!
+                당신의 펫을 위한 기분 좋은 <b>핑퐁</b>
             </Title>
             <SubTitle second>
-                반려인들 요청에 맞춰 예상 진료비와 병원소개를 해주세요^^
+                COMING SOON
             </SubTitle>
             <BtnWrapper>
-                <ArrowBtn type="primary" shape="circle" icon="arrow-down" size="large" onClick={() => this.props._fullpageApi.moveSectionDown()}/>
-            </BtnWrapper>
-        </AlignCenter>
+            <JoinBtn size="default" ghost onClick={this.Joinus} index={this.props._index}>사전 회원가입</JoinBtn>            </BtnWrapper>
+        </Wrapper>
     );
   }
 }

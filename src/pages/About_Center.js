@@ -109,11 +109,11 @@ class AboutCenterPage extends Component {
             <Row>
             <ColLeft md={12} sm={24}>
                 <AlignCenter>
-                    <Title>AboutPage 페이지 입니다.<b>포팻(ForYourPet)</b>에 대해 설명해주세요.</Title>
-                    <SubTitle>반갑습니다^^ 포펫입니다.</SubTitle>
-                    <Content>
-                        여기에는 내용을 적어주세요. 어떤 내용이 들어가면 좋을까요..
-                    </Content>
+                  <Title>지금 <b>핑</b>해주세요.</Title>
+                  <SubTitle>#동물병원 #호텔링 #미용 #목욕</SubTitle>
+                  <Content>
+                    반려동물에게 필요한 서비스를 찾고있다면 지금 핑해주세요. 한마디 핑에 다섯마디 퐁으로 포펫이 답해드려요
+                  </Content>
                 </AlignCenter>
             </ColLeft>
             <ColRight md={12} sm={24}>
