@@ -70,6 +70,9 @@ const Image = styled.img`
     z-index:-1;
     width:50vh;
     opacity:0;
+    @media(max-width:768px){
+      width: 50vh;
+    }
     ${props => props.fromTop && css`
         animation: ${fromTop} 1s ease-out forwards;
     `}
@@ -109,10 +112,10 @@ class AboutCenterPage extends Component {
             <Row>
             <ColLeft md={12} sm={24}>
                 <AlignCenter>
-                  <Title>지금 <b>핑</b>해주세요.</Title>
+                  <Title>지금 <b>핑</b>해주세요</Title>
                   <SubTitle>#동물병원 #호텔링 #미용 #목욕</SubTitle>
                   <Content>
-                    반려동물에게 필요한 서비스를 찾고있다면 지금 핑해주세요. 한마디 핑에 다섯마디 퐁으로 포펫이 답해드려요
+                    반려동물에게 필요한 서비스를 찾고있다면 지금 핑해주세요. 한마디 핑에 다섯마디 퐁으로 포펫이 답해드려요.
                   </Content>
                 </AlignCenter>
             </ColLeft>

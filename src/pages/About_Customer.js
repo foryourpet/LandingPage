@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import AlignCenter from '../components/AlignCenter'
 import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
-import about from '../images/about_1.png'
+import about from '../images/about_2.png'
 import { fadeInUp, fadeOutDown } from 'react-animations'
 
 const fromTop = keyframes`${fadeInUp}`;
@@ -33,6 +33,9 @@ const Image = styled.img`
   z-index:-1;
   width:50vh;
   opacity:0;
+  @media(max-width:768px){
+    width: 50vh;
+  }
   ${props => props.fromTop && css`
       animation: ${fromTop} 1s ease-out forwards;
   `}
@@ -72,7 +75,7 @@ class AboutCustomerPage extends Component {
           </ColLeft>
           <ColRight md={12} sm={24}>
             <AlignCenter>
-              <Title>지금 <b>퐁</b>해주세요.</Title>
+              <Title>지금 <b>퐁</b>해주세요</Title>
               <SubTitle>#수의사 #강아지호텔 #고양이호텔 #강아지미용사 #펫미용</SubTitle>
               <Content>
               당신의 서비스를 어떻게 알릴지 더이상 힘들게 고민하지 말아요. 이제 단지 핑하면 퐁해주세요.

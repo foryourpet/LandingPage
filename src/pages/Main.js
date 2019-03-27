@@ -61,7 +61,7 @@ class MainPage extends Component {
             #동물병원 #호텔링 #미용 #목욕
             </SubTitle>
             <Title>
-                <b>핑퐁퐁퐁</b> 이 소리는 당신의 반려동물에게 필요한 찰떡궁합 서비스를 찾는 소리입니다.
+                <b>핑퐁퐁퐁</b><br/> 이 소리는 당신의 반려동물에게 필요한 찰떡궁합 서비스를 찾는 소리입니다.
             </Title>
             <SubTitle second>
                 DO PINGPONG FOR YOUR PET

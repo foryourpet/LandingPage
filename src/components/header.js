@@ -19,6 +19,16 @@ const JoinBtn = styled(Button)`
     float: right;
     border-radius: 50px !important;
     font-weight: bold !important;
+    @media(max-width:768px){
+        ${props => (props.index===2) && css`
+            color: #6648b5 !important;
+            border-color: #6648b5 !important;
+            :hover {
+                background: #6648b5 !important;
+                color: #FFF !important;
+            }
+        `}
+    }
     ${props => (props.index===1 || props.index===3) && css`
         color: #6648b5 !important;
         border-color: #6648b5 !important;

@@ -55,6 +55,9 @@ const Title = styled.p`
     b {
         color: rgb(102, 72, 181);
     }
+    @media(max-width:768px){
+        font-size: 26px;
+    }
 `
 const Wrapper = styled(AlignCenter)`
     text-align: center !important;
@@ -77,7 +80,7 @@ class ComingSoonPage extends Component {
                 핑퐁포펫
             </SubTitle>
             <Title>
-                당신의 펫을 위한 기분 좋은 <b>핑퐁</b>
+                당신의 펫을 위한 기분 좋은<br/><b>핑퐁</b>
             </Title>
             <SubTitle second>
                 COMING SOON
