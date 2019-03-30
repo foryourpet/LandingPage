@@ -73,23 +73,26 @@ const JoinBtn = styled(Button)`
     }                     
 `
 class ComingSoonPage extends Component {
-  render() {
-    return (
-        <Wrapper>
-            <SubTitle first>
-                핑퐁포펫
-            </SubTitle>
-            <Title>
-                당신의 펫을 위한 기분 좋은<br/><b>핑퐁</b>
-            </Title>
-            <SubTitle second>
-                COMING SOON
-            </SubTitle>
-            <BtnWrapper>
-            <JoinBtn size="default" ghost onClick={this.Joinus} index={this.props._index}>사전 회원가입</JoinBtn>            </BtnWrapper>
-        </Wrapper>
-    );
-  }
+    Joinus(){
+        window.location.href="https://forms.gle/5RGCPmPgLrMSRHwn6"
+    }
+    render() {
+        return (
+            <Wrapper>
+                <SubTitle first>
+                    핑퐁포펫
+                </SubTitle>
+                <Title>
+                    당신의 펫을 위한 기분 좋은<br/><b>핑퐁</b>
+                </Title>
+                <SubTitle second>
+                    COMING SOON
+                </SubTitle>
+                <BtnWrapper>
+                <JoinBtn size="default" ghost onClick={this.Joinus} index={this.props._index}>사전 회원가입</JoinBtn>            </BtnWrapper>
+            </Wrapper>
+        );
+    }
 }
 
 export default ComingSoonPage;

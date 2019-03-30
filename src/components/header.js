@@ -52,7 +52,7 @@ const JoinBtn = styled(Button)`
 
 class HaederComponent extends Component {
     Joinus(){
-        window.location.href="https://goo.gl/forms/HU9PV9QY8zHYX7rh2"
+        window.location.href="https://forms.gle/5RGCPmPgLrMSRHwn6"
     }
     render() {
         return (
