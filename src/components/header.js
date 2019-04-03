@@ -5,11 +5,12 @@ import { Button } from 'antd';
 
 const Header = styled.div`
     position: fixed;
-    padding: .75rem;
-    height: 60px;
+    padding: 2rem 1.5rem;
+    height: 75px;
     z-index: 1;
     width: 100%;
     background: #FFF0;
+    align-self: center;
 `
 const Logo = styled.img`
     width: 140px;

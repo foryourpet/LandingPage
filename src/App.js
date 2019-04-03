@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
 import { Layout } from 'antd';
+import styled from 'styled-components';
 import './App.css';
+
+
+// images 
+import coming_soon from './images/coming_soon_1.png'
 
 // components
 import HaederComponent from './components/header'
@@ -15,6 +20,11 @@ import AboutCustomerPage from './pages/About_Customer'
 import AboutOtherPage from './pages/About_Other'
 import ComingSoonPage from './pages/ComingSoon'
 
+const ComingSection = styled.div`
+  background-image: url(${coming_soon});
+  background-size: cover;
+  background-position: center;
+`
 class App extends Component {
   constructor(){
     super()
@@ -77,9 +87,9 @@ class App extends Component {
                 <div className="section">
                   <AboutCustomerPage _index={this.state.index} _before={this.state.before}/>
                 </div>
-                <div className="section">
+                <ComingSection className="section">
                   <ComingSoonPage _index={this.state.index} _before={this.state.before}/>
-                </div>
+                </ComingSection>
               </ReactFullpage.Wrapper>
             );
           }}

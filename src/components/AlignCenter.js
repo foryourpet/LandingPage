@@ -9,6 +9,7 @@ const FullOuter = styled.div`
     width: 85%;
     text-align: left;
     margin:auto;
+    max-width: 1000px;
 `
 const HalfOuter = styled.div`
     display: table;
@@ -16,6 +17,7 @@ const HalfOuter = styled.div`
     width: 70%;
     text-align: left;
     margin:auto;
+    max-width: 435px;
     @media(max-width:768px){
         width: 90%;
     }

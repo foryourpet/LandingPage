@@ -60,7 +60,7 @@ const ColRight = styled(Col)`
   }
 `
 const ImageWrapper = styled.div`
-    margin-top: 50vh;
+    margin-top: 40vh;
     text-align: center;
     @media(max-width:768px){
         margin-top: 0;
@@ -68,10 +68,10 @@ const ImageWrapper = styled.div`
 `
 const Image = styled.img`
     z-index:-1;
-    width:50vh;
+    width:60vh;
     opacity:0;
     @media(max-width:768px){
-      width: 50vh;
+      width: 60vh;
     }
     ${props => props.fromTop && css`
         animation: ${fromTop} 1s ease-out forwards;
@@ -90,20 +90,31 @@ const Image = styled.img`
 const SubTitle = styled.p`
     margin: 0px;
     margin-top:10px;
+    font-size: 18px;
     color: rgb(150,150,150);
-`
-const Title = styled.p`
-    font-size: 30px;
-    margin-bottom: 5px;
-    color: rgb(50,50,50);
-    font-weight: 600;
-    b {
-        color: rgb(102, 72, 181);
+    @media(max-width:768px){
+      font-size: 16px;
     }
 `
+const Title = styled.p`
+  font-size: 35px;
+  margin-bottom: 5px;
+  color: rgb(50,50,50);
+  font-weight: 400;
+  b {
+      font-weight: 400;
+      color: rgb(102, 72, 181);
+  }
+  @media(max-width:768px){
+    font-size: 26px;
+  }
+`
 const Content = styled.p`
-    font-size: 16px;
+    font-size: 18px;
     color: rgb(50, 50, 50);
+    @media(max-width:768px){
+      font-size: 16px;
+    }
 `
 class AboutCenterPage extends Component {
     render() {

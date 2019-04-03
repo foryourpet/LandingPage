@@ -57,11 +57,12 @@ const SubTitle = styled.p`
     color: rgb(150,150,150);
 `
 const Title = styled.p`
-    font-size: 30px;
+    font-size: 35px;
     margin-bottom: 5px;
     color: rgb(50,50,50);
-    font-weight: 600;
+    font-weight: 400;
     b {
+        font-weight: 400;
         color: rgb(0, 205, 189);
     }
 `

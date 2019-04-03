@@ -4,19 +4,17 @@ import { Icon } from 'antd';
 
 const SocialWrapper = styled.ol`
     position: absolute;
-    bottom: 10px;
-    right:10px;
+    bottom: 0;
+    right:0;
     z-index: 1;
     padding-left: 0;
-    margin-right: 15%;
-    margin-left: 15%;
     list-style: none;
-    margin: 0px;
     display: block;
+    margin: 2rem 1.5rem;
 `
 const Social = styled.li`
     opacity: 1 !important;
-    margin: 10px;
+    margin-top: 10px;
 `
 const SocialIcon = styled(Icon)`
     font-size: 20px;

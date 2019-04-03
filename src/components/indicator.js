@@ -3,11 +3,11 @@ import styled, { css, keyframes } from 'styled-components';
 
 const indicateWidth = keyframes`
   0% {
-    width: 18px;
+    width: 13px;
     background: #DDD;
   }
   100% {
-    width: 28px;
+    width: 20px;
     background: #6648b5;
   }
 `
@@ -16,8 +16,6 @@ const IndicatorWrapper = styled.ol`
     bottom: 0;
     z-index: 1;
     padding-left: 0;
-    margin-right: 15%;
-    margin-left: 15%;
     list-style: none;
     margin: 0px;
     display: block;
@@ -28,7 +26,7 @@ const IndicatorWrapper = styled.ol`
 `
 const Indicator = styled.li`
     opacity: 1 !important;
-    width: 18px;
+    width: 13px;
     height: 2px;
     margin: 10px;
     background: #DDD;
@@ -43,7 +41,7 @@ class IndicatorComponent extends Component {
   render() {
       const { _index } = this.props
         return (
-            <IndicatorWrapper>
+            <IndicatorWrapper style={{marginLeft: '1rem'}}>
                 <Indicator active={_index===1 ? true : false}></Indicator>
                 <Indicator active={_index===2 ? true : false}></Indicator>
                 <Indicator active={_index===3 ? true : false}></Indicator>
