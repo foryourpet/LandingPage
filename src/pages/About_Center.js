@@ -1,147 +1,87 @@
 import React, { Component } from 'react';
-import styled, { css, keyframes} from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import AlignCenter from '../components/AlignCenter'
-import { Button, Row, Col } from 'antd';
+import { Row, Col } from 'antd';
+import { fadeInUp } from 'react-animations'
 
-import about from '../images/about_1.png'
+// images
+import center from '../images/center.jpg'
 
-const fromTop = keyframes`
-  0% {
-    opacity:0
-    transform: rotate(20deg);
-  }
-  100% {
-    opacity:1
-    transform: rotate(0deg);
-  }
-`
-const fromBottom = keyframes`
-  0% {
-    opacity:0
-    transform: rotate(-20deg);
-  }
-  100% {
-    opacity:1
-    transform: rotate(0deg);
-  }
-`
-const toTop = keyframes`
-  0% {
-    opacity:1
-    transform: rotate(0deg);
-  }
-  100% {
-    opacity:0
-    transform: rotate(20deg);
-  }
-`
-const toBottom = keyframes`
-  0% {
-    opacity:1
-    transform: rotate(0deg);
-  }
-  100% {
-    opacity:0
-    transform: rotate(-20deg);
-  }
-`
+const TextFade = keyframes`${fadeInUp}`;
+
 const ColLeft = styled(Col)`
   height: 100vh;
-  background: rgb(255, 255, 255);
+  background: rgb(245, 245, 245);
   @media(max-width:768px){
     height: 50vh;
   }
 `
 const ColRight = styled(Col)`
   height: 100vh;
-  background: rgb(0, 205, 189);
+  background: rgb(255, 255, 255);
   @media(max-width:768px){
     height: 50vh;
   }
 `
 const ImageWrapper = styled.div`
-    margin-top: 40vh;
-    text-align: center;
-    @media(max-width:768px){
-        margin-top: 0;
-    }
+    background-image:url(${center});
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
 `
-const Image = styled.img`
-    z-index:-1;
-    width:60vh;
-    opacity:0;
-    @media(max-width:768px){
-      width: 60vh;
-    }
-    ${props => props.fromTop && css`
-        animation: ${fromTop} 1s ease-out forwards;
-    `}
-    ${props => props.fromBottom && css`
-        animation: ${fromBottom} 1s ease-out forwards;
-    `}
-    ${props => props.toTop && css`
-        animation: ${toTop} 1s ease-out forwards;
-    `}
-    ${props => props.toBottom && css`
-        animation: ${toBottom} 1s ease-out forwards;
-    `}
-`
-
 const SubTitle = styled.p`
-    margin: 0px;
-    margin-top:10px;
-    font-size: 18px;
-    color: rgb(150,150,150);
-    @media(max-width:768px){
-      font-size: 16px;
-    }
+  font-size: 14px;
+  font-weight: bold;
+  color: #6648b5;
 `
 const Title = styled.p`
-  font-size: 35px;
+  font-size: 48px;
   margin-bottom: 5px;
-  color: rgb(50,50,50);
-  font-weight: 400;
-  b {
-      font-weight: 400;
-      color: rgb(102, 72, 181);
-  }
+  font-weight: 100;
+  color: #333333;
+  line-height: 1.21;
+  font-family: 'Spoqa Han Sans';
   @media(max-width:768px){
-    font-size: 26px;
+    font-size: 35px;
   }
 `
 const Content = styled.p`
-    font-size: 18px;
-    color: rgb(50, 50, 50);
-    @media(max-width:768px){
-      font-size: 16px;
-    }
+  margin-top: 40px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #666666;
 `
-class AboutCenterPage extends Component {
-    render() {
-        const { _index, _before } = this.props
-        return (
-            <Row>
-            <ColLeft md={12} sm={24}>
-                <AlignCenter>
-                  <Title>지금 <b>핑</b>해주세요</Title>
-                  <SubTitle>#동물병원 #호텔링 #미용 #목욕</SubTitle>
-                  <Content>
-                    반려동물에게 필요한 서비스를 찾고있다면 지금 핑해주세요. 한마디 핑에 다섯마디 퐁으로 포펫이 답해드려요.
-                  </Content>
-                </AlignCenter>
-            </ColLeft>
-            <ColRight md={12} sm={24}>
-                <ImageWrapper>
-                    <Image 
-                    fromTop={_index===2 && _before==="main" ? true : false}
-                    fromBottom={_index===2 && _before==="about-customer" ? true : false} 
-                    toTop={_index===1 ? true : false}
-                    toBottom={_index===3 ? true : false} src={about}/>
-                </ImageWrapper>
-            </ColRight>
-            </Row>
-        );
-    }
+const Hr = styled.div`
+    animation-delay: 5s;
+    animation: ${TextFade} 3s ease forwards;
+    margin-top:24px;
+    width: 40px;
+    height: 1.2px;
+    background-color: #00cdbd;
+`
+class AboutCustomerPage extends Component {
+  render() {
+    const { _index, _before } = this.props
+    return (
+        <Row>
+          <ColLeft md={12} sm={24}>
+            <AlignCenter>
+              <Title>지금<br/><b>퐁</b>해주세요</Title>
+              <Hr/>
+              <Content>
+              당신의 서비스를 어떻게 알릴지 더이상 힘들게 고민하지 마세요.<br/>
+              이제 단지 핑하면 퐁해주세요.
+              </Content>
+              <SubTitle>#수의사 #강아지호텔 #고양이호텔 #강아지미용사 #펫미용</SubTitle>
+            </AlignCenter>
+          </ColLeft>
+          <ColRight md={12} sm={24}>
+            <ImageWrapper/>
+          </ColRight>
+        </Row>
+    );
+  }
 }
 
-export default AboutCenterPage;
+export default AboutCustomerPage;

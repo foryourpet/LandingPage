@@ -21,18 +21,24 @@ const SocialIcon = styled(Icon)`
 `
 
 
-class SocialComponent extends Component {
-  render() {
-        return (
-            <SocialWrapper>
-                <Social>
-                    <SocialIcon type="facebook" />
-                </Social>
-                <Social>
-                    <SocialIcon type="instagram" />
-                </Social>
-            </SocialWrapper>
-        );
+class SocialComponent extends Component { 
+    render() {
+        const index = this.props._index
+        if (index === 4){
+            return null
+        }
+        else{
+            return (
+                <SocialWrapper>
+                    <Social>
+                        <SocialIcon type="facebook" />
+                    </Social>
+                    <Social>
+                        <SocialIcon type="instagram" />
+                    </Social>
+                </SocialWrapper>
+            );
+        }
     }
 }
 

@@ -4,32 +4,24 @@ import AlignCenter from '../components/AlignCenter'
 import { Button } from 'antd';
 import { fadeInUp } from 'react-animations'
 // images 
-import coming_soon from '../images/coming_soon_1.jpg'
+import icon_x from '../images/ico-x.png'
 
 const TextFade = keyframes`${fadeInUp}`;
-const ArrowMove = keyframes`
-    0% {
-        margin-top: 0;
-    }
-    50%{
-        margin-top: 7px;
-    }
-    100% {
-        margin-top: 0;
-    }
+const Container = styled.div`
+    width: 90%;
+    max-width: 1180px;
+    height: 80vh;
+    max-height: 620px;
+    background-color: #f9f9f9;
+    bottom: 0;
+    position: absolute;
+    left: 5%;
 `
 const BtnWrapper = styled.div`
     text-align:center;
     opacity:0
     animation: ${TextFade} 1s ease forwards;
     animation-delay: 1.8s;
-`
-const ArrowBtn = styled(Button)`
-    position: absolute !important;
-    background: rgb(102, 72, 181) !important;
-    border-color: rgb(102, 72, 181) !important;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5) !important;
-    animation: ${ArrowMove} 1.5s ease-out infinite;
 `
 const SubTitle = styled.p`
     text-align:center;
@@ -40,27 +32,51 @@ const SubTitle = styled.p`
     font-size:20px;
     ${props => props.first && css`
         animation-delay: 0s;
+        color: #6648b5;
+        font-family: 'Spoqa Han Sans';
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 24px;
+        text-indent: 24px;
     `}
     ${props => props.second && css`
         animation-delay: 1.2s;
+        font-family: 'Montserrat';
+        font-size: 24px;
+        font-weight: 900;
+        color: #333333;
+        margin-bottom:0px;
+    `}
+    ${props => props.third && css`
+        animation-delay: 1.8s;
+        font-family: 'Montserrat';
+        font-size: 24px;
+        font-weight: 900;
+        color: #6648b5;
     `}
     @media(max-width:768px){
         font-size: 16px;
     }
 `
+const Hr = styled.div`
+    margin: 16px auto;
+    animation-delay: 5s;
+    animation: ${TextFade} 3s ease forwards;
+    width: 40px;
+    height: 1.2px;
+    background-color: #00cdbd;
+`
 const Title = styled.p`
-    text-align:center;
     opacity:0
+    margin-top: 40px;
     animation: ${TextFade} 1.4s ease forwards;
     animation-delay: .5s;
-    font-size: 35px;
-    margin-bottom: 10px;
-    color: rgb(0,0,0);
-    font-weight: 400;
-    b {
-        font-weight: 400;
-        color: rgb(102, 72, 181);
-    }
+    font-family: 'Spoqa Han Sans';
+    font-size: 48px;
+    font-weight: 100;
+    line-height: 1.21;
+    text-align: center;
+    color: #333333;
     @media(max-width:768px){
         font-size: 26px;
     }
@@ -69,7 +85,10 @@ const Wrapper = styled(AlignCenter)`
     text-align: center !important;
 `
 const JoinBtn = styled(Button)`
-    border-radius: 50px !important;
+    margin-top: 48px;
+    width: 320px;
+    height: 56px !important;
+    border-radius: 28px !important;
     font-weight: bold !important;
     color: #6648b5 !important;
     border-color: #6648b5 !important;
@@ -78,26 +97,43 @@ const JoinBtn = styled(Button)`
         color: #FFF !important;
     }                     
 `
+const Xicon = styled.div`
+    opacity:0;
+    width: 32px;
+    height: 32px;  
+    background-image: url(${icon_x});
+    margin:10px auto;
+    animation: ${TextFade} 1s ease forwards;
+    animation-delay: 1.5s;
+`
 class ComingSoonPage extends Component {
     Joinus(){
         window.location.href="https://forms.gle/5RGCPmPgLrMSRHwn6"
     }
     render() {
         return (
-            <Wrapper>
-                <SubTitle first>
-                    핑퐁포펫
-                </SubTitle>
-                <Title>
-                    당신의 펫을 위한 기분 좋은<br/><b>핑퐁</b>
-                </Title>
-                <SubTitle second>
-                <b>For Your Pet</b> <br/>
-                COMING SOON
-                </SubTitle>
-                <BtnWrapper>
-                <JoinBtn size="default" ghost onClick={this.Joinus} index={this.props._index}>사전 회원가입</JoinBtn>            </BtnWrapper>
-            </Wrapper>
+            <Container>
+                <Wrapper>
+                    <SubTitle first>
+                        핑퐁포펫
+                    </SubTitle>
+                    <Hr/>
+                    <Title>
+                        당신의 펫을 위한<br/>
+                        기분좋은 <b>핑퐁</b>
+                    </Title>
+                    <SubTitle second>
+                        COMING SOON
+                    </SubTitle>
+                    <Xicon/>
+                    <SubTitle third>
+                        For Your Pet
+                    </SubTitle>
+                    <BtnWrapper>
+                        <JoinBtn size="default" ghost onClick={this.Joinus} index={this.props._index}>사전 회원가입</JoinBtn>            
+                    </BtnWrapper>
+                </Wrapper>
+            </Container>
         );
     }
 }

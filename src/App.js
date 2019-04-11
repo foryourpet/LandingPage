@@ -6,7 +6,7 @@ import './App.css';
 
 
 // images 
-import coming_soon from './images/coming_soon_1.png'
+import coming_soon from './images/coming_soon.jpg'
 
 // components
 import HaederComponent from './components/header'
@@ -17,7 +17,6 @@ import SocialComponent from './components/social'
 import MainPage from './pages/Main'
 import AboutCenterPage from './pages/About_Center'
 import AboutCustomerPage from './pages/About_Customer'
-import AboutOtherPage from './pages/About_Other'
 import ComingSoonPage from './pages/ComingSoon'
 
 const ComingSection = styled.div`
@@ -31,7 +30,7 @@ class App extends Component {
     this.onLeave  = this.onLeave.bind(this)
     this.state = {
       licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-      anchors: ["main", "about-center", "about-customer", "about-other", "coming-soon"],
+      anchors: ["main", "about-center", "about-customer", "coming-soon"],
       sectionsColor: ["#FFF", "#FFF", "#FFF", "#FFF", "#FFF"],
       callbacks: ["onLeave"],
       dragAndMove: "fingersonly",
@@ -55,11 +54,8 @@ class App extends Component {
     else if(anchor==="about-customer"){
       indexNum = 3
     }
-    else if(anchor==="about-other"){
+    else if(anchor==="coming-soon"){
       indexNum = 4
-    }
-    else{
-      indexNum = 5
     }
     this.setState({
       index : indexNum,
@@ -72,7 +68,7 @@ class App extends Component {
       <Layout>
         <HaederComponent _index={this.state.index}/>
         <IndicatorComponent _index={this.state.index}/>
-        <SocialComponent/>
+        <SocialComponent _index={this.state.index}/>
         <ReactFullpage
           {...fullpageOptions}
           render={({ state, fullpageApi }) => {
@@ -82,10 +78,10 @@ class App extends Component {
                   <MainPage _fullpageApi={fullpageApi}/>
                 </div>
                 <div className="section">
-                  <AboutCenterPage _index={this.state.index} _before={this.state.before}/>
+                  <AboutCustomerPage _index={this.state.index} _before={this.state.before}/>
                 </div>
                 <div className="section">
-                  <AboutCustomerPage _index={this.state.index} _before={this.state.before}/>
+                  <AboutCenterPage _index={this.state.index} _before={this.state.before}/>
                 </div>
                 <ComingSection className="section">
                   <ComingSoonPage _index={this.state.index} _before={this.state.before}/>

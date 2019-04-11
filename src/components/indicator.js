@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import styled, { css, keyframes } from 'styled-components';
+// images
+import ico_dot_hover from '../images/ico-dot-hover.png'
+import ico_dot_select from '../images/ico-dot-select.png'
 
 const indicateWidth = keyframes`
   0% {
-    width: 13px;
-    background: #DDD;
+    opacity:0;
   }
   100% {
-    width: 20px;
-    background: #6648b5;
+    opacity:1;
   }
 `
 const IndicatorWrapper = styled.ol`
     position: absolute;
     bottom: 0;
+    right: 0;
     z-index: 1;
     padding-left: 0;
     list-style: none;
@@ -26,13 +28,14 @@ const IndicatorWrapper = styled.ol`
 `
 const Indicator = styled.li`
     opacity: 1 !important;
-    width: 13px;
-    height: 2px;
-    margin: 10px;
-    background: #DDD;
+    width: 10px;
+    height: 10px;
+    margin: 20px 10px;
+    background-image: url(${ico_dot_hover});
     animation-iteration-count: 1;
     ${props => props.active && css`
-        animation: ${indicateWidth} .5s ease-out forwards;
+      background-image: url(${ico_dot_select});
+      animation: ${indicateWidth} .5s ease-out forwards;
     `}
 `
 

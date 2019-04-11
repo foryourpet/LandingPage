@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import logo from '../images/logo.png';
-import { Button } from 'antd';
 
 const FullOuter = styled.div`
     display: table;

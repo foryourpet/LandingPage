@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import styled, { css, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import AlignCenter from '../components/AlignCenter'
-import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
-import about from '../images/about_2.png'
-import { fadeInUp, fadeOutDown } from 'react-animations'
+import { Row, Col } from 'antd';
+import { fadeInUp } from 'react-animations'
 
-const fromTop = keyframes`${fadeInUp}`;
-const toTop = keyframes`${fadeOutDown}`;
+// images
+import customer from '../images/customer.jpg'
+
+const TextFade = keyframes`${fadeInUp}`;
 
 const ColLeft = styled(Col)`
   height: 100vh;
@@ -23,54 +24,41 @@ const ColRight = styled(Col)`
   }
 `
 const ImageWrapper = styled.div`
-  margin-top: 40vh;
-  text-align: center;
-  @media(max-width:768px){
-    margin-top: 0;
-  }
-`
-const Image = styled.img`
-  z-index:-1;
-  width:60vh;
-  opacity:0;
-  @media(max-width:768px){
-    width: 60vh;
-  }
-  ${props => props.fromTop && css`
-      animation: ${fromTop} 1s ease-out forwards;
-  `}
-  ${props => props.toTop && css`
-      animation: ${toTop} 1s ease-out forwards;
-  `}
+    background-image:url(${customer});
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
 `
 const SubTitle = styled.p`
-  font-size: 18px;
-  margin: 0px;
-  margin-top:10px;
-  color: rgb(150,150,150);
-  @media(max-width:768px){
-    font-size: 16px;
-  }
+  font-size: 14px;
+  font-weight: bold;
+  color: #6648b5;
 `
 const Title = styled.p`
-  font-size: 35px;
+  font-size: 48px;
   margin-bottom: 5px;
-  color: rgb(50,50,50);
-  font-weight: 400;
-  b {
-      font-weight: 400;
-      color: rgb(102, 72, 181);
-  }
+  font-weight: 100;
+  color: #333333;
+  line-height: 1.21;
+  font-family: 'Spoqa Han Sans';
   @media(max-width:768px){
-    font-size: 26px;
+    font-size: 35px;
   }
 `
 const Content = styled.p`
-  font-size: 18px;
-  color: rgb(50, 50, 50);
-  @media(max-width:768px){
-    font-size: 16px;
-  }
+  margin-top: 40px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #666666;
+`
+const Hr = styled.div`
+    animation-delay: 5s;
+    animation: ${TextFade} 3s ease forwards;
+    margin-top:24px;
+    width: 40px;
+    height: 1.2px;
+    background-color: #00cdbd;
 `
 class AboutCustomerPage extends Component {
   render() {
@@ -78,19 +66,17 @@ class AboutCustomerPage extends Component {
     return (
         <Row>
           <ColLeft md={12} sm={24}>
-            <ImageWrapper>
-              <Image 
-                fromTop={ _index===3 ? true : false}
-                toTop={_index!=3 ? true : false} src={about}/>
-            </ImageWrapper>
+            <ImageWrapper/>
           </ColLeft>
           <ColRight md={12} sm={24}>
             <AlignCenter>
-              <Title>지금 <b>퐁</b>해주세요</Title>
-              <SubTitle>#수의사 #강아지호텔 #고양이호텔 #강아지미용사 #펫미용</SubTitle>
+              <Title>지금<br/><b>핑</b>해주세요</Title>
+              <Hr/>
               <Content>
-              당신의 서비스를 어떻게 알릴지 더이상 힘들게 고민하지 말아요. 이제 단지 핑하면 퐁해주세요.
+                반려동물에게 필요한 서비스를 찾고있다면 지금 핑해주세요.<br/>
+                한마디 핑에 다섯마디 퐁으로 포펫이 답해드려요.
               </Content>
+              <SubTitle>#수의사 #강아지호텔 #고양이호텔 #강아지미용사 #펫미용</SubTitle>
             </AlignCenter>
           </ColRight>
         </Row>
