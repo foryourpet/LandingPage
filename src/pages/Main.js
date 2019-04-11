@@ -9,10 +9,13 @@ import main_img from '../images/main.jpg'
 
 const TextFade = keyframes`${fadeInUp}`;
 const SubTitle = styled.p`
-    opacity:0
-    animation: ${TextFade} 1s ease forwards;
+    opacity:1
+    // animation: ${TextFade} 1s ease forwards;
     color: rgb(150,150,150);
     font-size: 18px;
+    @media(max-width:768px){
+        font-size: 16px;
+    }
     ${props => props.first && css`
         animation-delay: 0s;
         color: #6648b5;
@@ -32,11 +35,14 @@ const SubTitle = styled.p`
         font-family: 'Spoqa Han Sans';
         font-size: 18px;
         font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
         line-height: 1.63;
         letter-spacing: 16px;
         color: #6648b5;
+        @media(max-width:768px){
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
     `}
     ${props => props.third && css`
         animation-delay: 1.5s;
@@ -48,14 +54,15 @@ const SubTitle = styled.p`
         @media(max-width:1110px){
             font-size: 15px;
         }
+        @media(max-width:768px){
+            font-size: 13px;
+            margin-bottom: 0px;
+        }
     `}
-    @media(max-width:768px){
-        font-size: 16px;
-    }
 `
 const Title = styled.p`
-    opacity:0
-    animation: ${TextFade} 1.4s ease forwards;
+    opacity:1
+    // animation: ${TextFade} 1.4s ease forwards;
     animation-delay: .5s;
     font-size: 30px;
     margin-bottom: 10px;
@@ -76,6 +83,7 @@ const Title = styled.p`
     }
     @media(max-width:768px){
         b{
+            line-height: 10px;
             font-size: 35px;
         }
     }
@@ -85,6 +93,7 @@ const ColLeft = styled(Col)`
   background-color: rgb(255, 255, 255);
   @media(max-width:768px){
     height: 50vh;
+    padding-top: 20px;
   }
 `
 const ColRight = styled(Col)`

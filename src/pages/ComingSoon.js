@@ -7,26 +7,34 @@ import { fadeInUp } from 'react-animations'
 import icon_x from '../images/ico-x.png'
 
 const TextFade = keyframes`${fadeInUp}`;
+
+const Body = styled.div`
+    max-width: 1180px;
+    width: 100%;
+    margin:auto;
+    display: flex;
+    height: 100%;
+`
 const Container = styled.div`
     width: 90%;
     max-width: 1180px;
     height: 80vh;
     max-height: 620px;
     background-color: #f9f9f9;
-    bottom: 0;
-    position: absolute;
-    left: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
 `
 const BtnWrapper = styled.div`
     text-align:center;
-    opacity:0
-    animation: ${TextFade} 1s ease forwards;
+    opacity:1;
+    // animation: ${TextFade} 1s ease forwards;
     animation-delay: 1.8s;
 `
 const SubTitle = styled.p`
     text-align:center;
-    opacity:0
-    animation: ${TextFade} 1s ease forwards;
+    opacity:1;
+    // animation: ${TextFade} 1s ease forwards;
     color: rgb(50,50,50);
     margin-bottom: 10px;
     font-size:20px;
@@ -61,15 +69,15 @@ const SubTitle = styled.p`
 const Hr = styled.div`
     margin: 16px auto;
     animation-delay: 5s;
-    animation: ${TextFade} 3s ease forwards;
+    // animation: ${TextFade} 3s ease forwards;
     width: 40px;
     height: 1.2px;
     background-color: #00cdbd;
 `
 const Title = styled.p`
-    opacity:0
+    opacity:1
     margin-top: 40px;
-    animation: ${TextFade} 1.4s ease forwards;
+    // animation: ${TextFade} 1.4s ease forwards;
     animation-delay: .5s;
     font-family: 'Spoqa Han Sans';
     font-size: 48px;
@@ -86,7 +94,8 @@ const Wrapper = styled(AlignCenter)`
 `
 const JoinBtn = styled(Button)`
     margin-top: 48px;
-    width: 320px;
+    max-width: 320px;
+    width:80%;
     height: 56px !important;
     border-radius: 28px !important;
     font-weight: bold !important;
@@ -98,42 +107,45 @@ const JoinBtn = styled(Button)`
     }                     
 `
 const Xicon = styled.div`
-    opacity:0;
+    opacity:1;
     width: 32px;
     height: 32px;  
     background-image: url(${icon_x});
     margin:10px auto;
-    animation: ${TextFade} 1s ease forwards;
+    // animation: ${TextFade} 1s ease forwards;
     animation-delay: 1.5s;
 `
+
 class ComingSoonPage extends Component {
     Joinus(){
         window.location.href="https://forms.gle/5RGCPmPgLrMSRHwn6"
     }
     render() {
         return (
-            <Container>
-                <Wrapper>
-                    <SubTitle first>
-                        핑퐁포펫
-                    </SubTitle>
-                    <Hr/>
-                    <Title>
-                        당신의 펫을 위한<br/>
-                        기분좋은 <b>핑퐁</b>
-                    </Title>
-                    <SubTitle second>
-                        COMING SOON
-                    </SubTitle>
-                    <Xicon/>
-                    <SubTitle third>
-                        For Your Pet
-                    </SubTitle>
-                    <BtnWrapper>
-                        <JoinBtn size="default" ghost onClick={this.Joinus} index={this.props._index}>사전 회원가입</JoinBtn>            
-                    </BtnWrapper>
-                </Wrapper>
-            </Container>
+            <Body>
+                <Container>
+                    <Wrapper>
+                        <SubTitle first>
+                            핑퐁포펫
+                        </SubTitle>
+                        <Hr/>
+                        <Title>
+                            당신의 펫을 위한<br/>
+                            기분좋은 <b>핑퐁</b>
+                        </Title>
+                        <SubTitle second>
+                            COMING SOON
+                        </SubTitle>
+                        <Xicon/>
+                        <SubTitle third>
+                            For Your Pet
+                        </SubTitle>
+                        <BtnWrapper>
+                            <JoinBtn size="default" ghost onClick={this.Joinus} index={this.props._index}>사전 회원가입</JoinBtn>            
+                        </BtnWrapper>
+                    </Wrapper>
+                </Container>
+            </Body>
         );
     }
 }

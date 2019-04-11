@@ -11,6 +11,9 @@ const Header = styled.div`
     width: 100%;
     background: #FFF0;
     align-self: center;
+    @media(max-width:768px){
+        padding: 1rem;
+    }
 `
 const Logo = styled.img`
     width: 140px;

@@ -14,6 +14,7 @@ const ColLeft = styled(Col)`
   background: rgb(245, 245, 245);
   @media(max-width:768px){
     height: 50vh;
+    padding-top: 20px;
   }
 `
 const ColRight = styled(Col)`
@@ -34,6 +35,10 @@ const SubTitle = styled.p`
   font-size: 14px;
   font-weight: bold;
   color: #6648b5;
+  @media(max-width:768px){
+    font-size: 12px;
+    margin-bottom: 0px;
+  }
 `
 const Title = styled.p`
   font-size: 48px;
@@ -51,6 +56,11 @@ const Content = styled.p`
   margin-bottom: 8px;
   font-size: 16px;
   color: #666666;
+  @media(max-width:768px){
+    font-size: 13px;
+    margin-top: 15px;
+    letter-spacing: -0.4px;
+  }
 `
 const Hr = styled.div`
     animation-delay: 5s;
@@ -59,6 +69,9 @@ const Hr = styled.div`
     width: 40px;
     height: 1.2px;
     background-color: #00cdbd;
+    @media(max-width:768px){
+      margin-top: 10px;
+    }
 `
 class AboutCustomerPage extends Component {
   render() {
