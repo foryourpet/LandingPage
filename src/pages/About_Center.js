@@ -6,6 +6,8 @@ import { fadeInUp } from 'react-animations'
 
 // images
 import center from '../images/center.jpg'
+import ReactGA from 'react-ga';
+ReactGA.pageview("/#about-center");
 
 const TextFade = keyframes`${fadeInUp}`;
 

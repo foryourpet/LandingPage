@@ -6,6 +6,8 @@ import { fadeInUp } from 'react-animations'
 
 // images 
 import main_img from '../images/main.jpg'
+import ReactGA from 'react-ga';
+ReactGA.pageview("/#main");
 
 const TextFade = keyframes`${fadeInUp}`;
 const SubTitle = styled.p`

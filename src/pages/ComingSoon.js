@@ -3,10 +3,10 @@ import styled, { keyframes, css } from 'styled-components';
 import AlignCenter from '../components/AlignCenter'
 import { Button } from 'antd';
 import { fadeInUp } from 'react-animations'
-import ReactGA from 'react-ga';
-
 // images 
 import icon_x from '../images/ico-x.png'
+import ReactGA from 'react-ga';
+ReactGA.pageview("/#coming-soon");
 
 const TextFade = keyframes`${fadeInUp}`;
 

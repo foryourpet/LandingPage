@@ -6,6 +6,8 @@ import { fadeInUp } from 'react-animations'
 
 // images
 import customer from '../images/customer.jpg'
+import ReactGA from 'react-ga';
+ReactGA.pageview("/#about-customer");
 
 const TextFade = keyframes`${fadeInUp}`;
 
