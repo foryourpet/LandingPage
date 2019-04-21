@@ -3,6 +3,8 @@ import styled, { keyframes, css } from 'styled-components';
 import AlignCenter from '../components/AlignCenter'
 import { Button } from 'antd';
 import { fadeInUp } from 'react-animations'
+import ReactGA from 'react-ga';
+
 // images 
 import icon_x from '../images/ico-x.png'
 
@@ -118,6 +120,10 @@ const Xicon = styled.div`
 
 class ComingSoonPage extends Component {
     Joinus(){
+        ReactGA.event({
+            category: '버튼클릭',
+            action: '사전회원가입 버튼',
+        });
         window.location.href="https://forms.gle/5RGCPmPgLrMSRHwn6"
     }
     render() {

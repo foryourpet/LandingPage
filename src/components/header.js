@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 import logo from '../images/logo.png';
 import { Button } from 'antd';
+import ReactGA from 'react-ga';
 
 const Header = styled.div`
     position: fixed;
@@ -33,20 +34,12 @@ const JoinBtn = styled(Button)`
             }
         `}
     }
-    ${props => (props.index===1 || props.index===3) && css`
+    ${props => (props.index===1 || props.index===2 || props.index===3) && css`
         color: #6648b5 !important;
         border-color: #6648b5 !important;
         :hover {
             background: #6648b5 !important;
             color: #FFF !important;
-        }
-    `}
-    ${props => (props.index===2) && css`
-        color: #FFF !important;
-        border-color: #FFF !important;
-        :hover {
-            background: #FFF !important;
-            color: #555 !important;
         }
     `}
     ${props => (props.index===4) && css`
@@ -56,6 +49,10 @@ const JoinBtn = styled(Button)`
 
 class HaederComponent extends Component {
     Joinus(){
+        ReactGA.event({
+            category: '버튼클릭',
+            action: '사전회원가입 버튼',
+        });
         window.location.href="https://forms.gle/5RGCPmPgLrMSRHwn6"
     }
     render() {

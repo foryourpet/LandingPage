@@ -4,6 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'antd/dist/antd.css';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-109296624-2');
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
