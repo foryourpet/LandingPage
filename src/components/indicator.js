@@ -15,7 +15,7 @@ const indicateWidth = keyframes`
 const IndicatorWrapper = styled.ol`
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 60px;
     z-index: 1;
     padding-left: 0;
     list-style: none;
