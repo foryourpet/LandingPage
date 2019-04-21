@@ -14,6 +14,13 @@ const TextFade = keyframes`${fadeInUp}`;
 const ColLeft = styled(Col)`
   height: 100vh;
   background: rgb(245, 245, 245);
+  display:block !important;
+  @media(max-width:768px){
+    display:none !important;
+  }
+`
+const ColImg = styled(Col)`
+  display:none;
   @media(max-width:768px){
     height: 50vh;
   }
@@ -95,6 +102,9 @@ class AboutCustomerPage extends Component {
               <SubTitle>#수의사 #강아지호텔 #고양이호텔 #강아지미용사 #펫미용</SubTitle>
             </AlignCenter>
           </ColRight>
+          <ColImg md={12} sm={24}>
+            <ImageWrapper/>
+          </ColImg>
         </Row>
     );
   }
